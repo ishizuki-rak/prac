@@ -1,3 +1,12 @@
+# LAMP
+
+
+
+
+
+memo
+---
+
 ```cs
 ishidukiRAK10
 ryoma.ishizuki@connec10.co.jp
