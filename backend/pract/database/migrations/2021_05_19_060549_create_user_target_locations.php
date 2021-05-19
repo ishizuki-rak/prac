@@ -17,6 +17,7 @@ class CreateUserTargetLocations extends Migration
             $table->id();
             $table->intger('user_id')->nullable(false);
             $table->intger('location_id')->nullable(false);
+            $table->date('created_at')->nullable(false)->comment('作成日時');
             $table->date('went_at')->nullable()->comment('入店日時');
             $table->integer('stars', 2)->comment('0～5までの評価');
         });

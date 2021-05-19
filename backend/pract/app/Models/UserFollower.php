@@ -15,4 +15,9 @@ class UserFollower extends Model
     public function users() {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    // 対象をフォロー中のユーザを限定
+    public function scopeUser($query, $userId){
+        return $query->where('follow_user_id', $userId);
+    }
 }

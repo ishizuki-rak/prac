@@ -11,7 +11,8 @@ class News extends Model
         'registed_at',
     ];
 
-    // public function users() {
-    //     return $this->belongsTo('App\User', 'user_id');
-    // }
+    // 最新１件
+    public function getNew(){
+        $this->orderBy('registed_at', 'desc')->first();
+    }
 }

@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 1user, 1dayにつき3recordまで
+ */
 class UserTargetLocation extends Model
 {
 
