@@ -15,8 +15,8 @@ class CreateUserFollows extends Migration
     {
         Schema::create('user_follows', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->comment('ユーザID');
-            $table->integer('follow_user_id')->unsigned()->comment('フォローユーザID');
+            $table->integer('user_id')->nullable(false)->comment('ユーザID');
+            $table->integer('follow_user_id')->unsigned()->nullable(false)->comment('フォローユーザID');
         });
     }
 

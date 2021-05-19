@@ -15,9 +15,9 @@ class CreateUsers extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->comment('名前');
-            $table->string('password')->comment('パスワード');
-            $table->string('contents', 100)->comment('ヒトコト');
+            $table->string('name')->nullable(false)->comment('名前');
+            $table->string('password')->nullable(false)->comment('パスワード');
+            $table->string('contents', 100)->default('よろしくおねがいします。')->comment('ヒトコト');
             $table->integer('total_point')->unsigned()->comment('累計Pt');
             $table->integer('followers')->unsigned()->comment('フォロワー数');
             $table->date('last_login_at')->comment('最終ログイン日時');

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNews extends Migration
+class UpdateUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateNews extends Migration
      */
     public function up()
     {
-        Schema::create('news', function (Blueprint $table) {
-            $table->id();
-            $table->string('contents')->comment('マーキー内容')->nullable(false);
-            $table->date('registed_at')->nullable(false);
+        Schema::create('users', function (Blueprint $table) {
+            $table->string('name')->comment('name')->change();
+            $table->intger('gauge', 2)->comment('満腹ゲージ');
         });
     }
 
@@ -27,6 +26,7 @@ class CreateNews extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        $table->string('name')->comment('名前')->change();
+        $table->dropColumn('gauge');
     }
 }
