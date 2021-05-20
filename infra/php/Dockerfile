@@ -1,4 +1,5 @@
 FROM php:8.0-fpm-buster
+FROM node:12.13.0-alpine as node
 SHELL ["/bin/bash", "-oeux", "pipefail", "-c"]
 
 ENV COMPOSER_ALLOW_SUPERUSER=1 \
